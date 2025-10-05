@@ -1,0 +1,10 @@
+librosa==0.10.1
+crepe==0.0.13
+aubio==0.4.9
+music21==9.1.0
+numpy>=1.24.0
+scipy>=1.10.0
+pydub>=0.25.1
+opencv-python>=4.8.0
+matplotlib>=3.7.0
+pytest>=7.4.0
