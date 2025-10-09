@@ -8,3 +8,4 @@ pydub>=0.25.1
 opencv-python>=4.8.0
 matplotlib>=3.7.0
 pytest>=7.4.0
+tensorflow>=2.10.0,<2.16.0
