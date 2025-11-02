@@ -27,17 +27,19 @@ ENV/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data files (can be large)
+# Data directories - ignore all contents but keep structure
 data/input/*
 data/output/*
 data/raw/*
 data/processed/*
+data/frames/*
+data/debug/*
+
+# Keep the directories themselves with .gitkeep files
 !data/input/.gitkeep
 !data/output/.gitkeep
-
-# Keep directory structure but ignore contents
-data/input/.gitkeep
-data/output/.gitkeep
+!data/frames/.gitkeep
+!data/debug/.gitkeep
 
 # Model files (usually large)
 models/*.h5
@@ -76,7 +78,7 @@ Thumbs.db
 temp/
 tmp/
 
-# Large media files (optional - uncomment if you don't want to track)
+# Large media files (optional - uncomment if you don't want to track test samples)
 # *.mp4
 # *.avi
 # *.mov
