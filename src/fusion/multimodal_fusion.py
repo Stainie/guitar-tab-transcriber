@@ -22,7 +22,7 @@ class MultimodalFusion:
         self.confidence_scorer = ConfidenceScorer()
         
         # Timing tolerance for matching audio/video events (seconds)
-        self.time_tolerance = 0.1
+        self.time_tolerance = 0.15
     
     def fuse_predictions(self,
                         audio_notes: List[Dict],
@@ -67,7 +67,7 @@ class MultimodalFusion:
             )
             
             # Only include if confidence is high enough
-            if audio_conf > 0.7:
+            if audio_conf > 0.5:
                 note = audio_note.copy()
                 note['source'] = 'audio_only'
                 note['confidence'] = audio_conf * self.audio_weight
@@ -80,7 +80,7 @@ class MultimodalFusion:
             )
             
             # Only include if confidence is high enough AND picking was detected
-            if video_conf > 0.7 and video_note.get('played', False):
+            if video_conf > 0.4 and video_note.get('played', False):
                 note = video_note.copy()
                 note['source'] = 'video_only'
                 note['confidence'] = video_conf * self.video_weight
